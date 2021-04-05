@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Part1/Array/Array.iml" filepath="$PROJECT_DIR$/Part1/Array/Array.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Part2/BST/BST.iml" filepath="$PROJECT_DIR$/Part2/BST/BST.iml" />
+      <module fileurl="file://$PROJECT_DIR$/LeetCode/LeetCode.iml" filepath="$PROJECT_DIR$/LeetCode/LeetCode.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Part2/BST/Map.iml" filepath="$PROJECT_DIR$/Part2/BST/Map.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Part3/src/MaxHeap/MaxHeap.iml" filepath="$PROJECT_DIR$/Part3/src/MaxHeap/MaxHeap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Part1/Part1.iml" filepath="$PROJECT_DIR$/Part1/Part1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Part2/Part2.iml" filepath="$PROJECT_DIR$/Part2/Part2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Part3/Part3.iml" filepath="$PROJECT_DIR$/Part3/Part3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Part2/Set/Set.iml" filepath="$PROJECT_DIR$/Part2/Set/Set.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Test/Test.iml" filepath="$PROJECT_DIR$/Test/Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/数据结构与算法.iml" filepath="$PROJECT_DIR$/数据结构与算法.iml" />
+      <module fileurl="file://$PROJECT_DIR$/玩转算法面试/玩转算法面试.iml" filepath="$PROJECT_DIR$/玩转算法面试/玩转算法面试.iml" />
+    </modules>
+  </component>
+</project>
