@@ -15,8 +15,11 @@ public class QuickSort {
 
     private static <E extends Comparable<E>> void sort(E[] arr, int l, int r, Random random) {
         //边界条件(又忘了，没有边界条件的递归只能无限递归下去)
+        //terminator
         if (l >= r) return;
+        //process
         int p = partition(arr, l, r, random);
+        //drill down
         //对p位置的左右区间分别partition，此处不包括p
         sort(arr, l, p - 1, random);
         sort(arr, p + 1, r, random);
@@ -183,7 +186,7 @@ class MyQuickSort {
     private static <E extends Comparable<E>> int partition2(E[] arr, int l, int r, Random random) {
         int p = (random.nextInt(r - l + 1)) + l;
         SortingHelper.swap(arr, l, p);
-        int i = l;
+        int i = l + 1;
         int j = r;
         while (true) {
             while (i < j && arr[i].compareTo(arr[l]) < 0) {

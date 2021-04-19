@@ -8,20 +8,21 @@ public class _226_反转二叉树 {
 
 
 class Solution226 {
-    //从方法的宏观语义出发，该方法传入一个根节点，就反转该节点的左右子树
     public TreeNode invertTree(TreeNode root) {
+        //terminator
+        if (root == null) return null;
 
-        //边界条件
-        if (root == null)
-            return null;
+        //process  交换某节点的左右子节点
+        TreeNode temp = root.right;
+        root.right = root.left;
+        root.left = temp;
 
-        //交换左右子树，其实真正的反转是在这里完成的
-        TreeNode temp;
-        temp = root.left;
-        root.left = root.right;
-        root.right = temp;
+        //drill down
         invertTree(root.left);
         invertTree(root.right);
+
+        //restore status
+
         return root;
     }
 }

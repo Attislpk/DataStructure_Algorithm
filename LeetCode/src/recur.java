@@ -1,5 +1,5 @@
 public class recur {
-
+/*
     public void recur(int level, int param) {
         //terminator
         if (level > MAX_LEVEL) {
@@ -15,4 +15,6 @@ public class recur {
 
         //restore current status
     }
+
+    */
 }

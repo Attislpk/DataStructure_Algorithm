@@ -13,10 +13,11 @@ public class _104_二叉树的最大深度 {
 class Solution104 {
     //从递归的出发
     public int maxDepth(TreeNode root) {
-        //递归终止条件
         if (root == null) return 0;
-        int maxDpethLeft = maxDepth(root.left);
-        int maxDepthRight = maxDepth(root.right);
-        return Math.max(maxDepthRight,maxDpethLeft)+1; //每一层递归结束向上返回时树的深度在这里+1
+
+        int left = maxDepth(root.left);
+        int right = maxDepth(root.right);
+        //注意这里是和最小深度的区别
+        return Math.max(left, right) + 1;
     }
 }

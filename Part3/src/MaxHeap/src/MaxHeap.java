@@ -12,10 +12,6 @@ public class MaxHeap<E extends Comparable<E>> {
 
     public MaxHeap(E[] arr) {
         data = new Array<>(arr);
-    }
-
-    //找出叶子节点的父节点进行siftDown操作
-    public void Heapify(E[] arr) {
         for (int i = parent(arr.length - 1); i >= 0; i--) {
             siftDown(i);
         }
@@ -59,7 +55,9 @@ public class MaxHeap<E extends Comparable<E>> {
 
     private void siftUp(int index) {
         while (index > 0 && data.get(parent(index)).compareTo(data.get(index)) < 0) {
+            //交换索引对应元素的位置
             data.swap(parent(index), index);
+            //当前元素的索引已经变成了parent(index)，继续和父亲节点进行比较
             index = parent(index);
         }
     }
@@ -102,11 +100,9 @@ public class MaxHeap<E extends Comparable<E>> {
 
     //取出二叉堆中的最大元素，并替换成元素e
     public E replace(E e) {
-
         E ret = findMax();
         data.set(0, e);
         siftDown(0);
         return ret;
-
     }
 }

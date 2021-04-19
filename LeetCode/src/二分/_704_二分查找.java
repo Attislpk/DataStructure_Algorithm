@@ -1,3 +1,5 @@
+package 二分;
+
 public class _704_二分查找 {
 }
 

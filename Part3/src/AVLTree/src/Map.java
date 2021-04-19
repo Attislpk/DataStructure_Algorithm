@@ -1,4 +1,4 @@
-public interface Map<K,V> {
+ interface MyMap<K,V> {
 
     V remove(K key);
     void add(K key, V value);

@@ -86,17 +86,17 @@ public class MinHeap<E extends Comparable<E>> {
         //如果index索引的元素还有左子树，则还可以继续下沉判断
         while (leftChild(index) < data.getSize()) {
             //j 引用默认指向左孩子
-            int j = leftChild(index);   //j引用指向的是左右孩子中的最小值
+            int minIndex = leftChild(index);   //j引用指向的是左右孩子中的最小值
             //如果右子树也存在,且右子树的值小于左子树
-            if (j + 1 < data.getSize() && data.get(j).compareTo(data.get(j + 1)) > 0) {
-                j = rightChild(index); //j的引用指向右孩子
+            if (minIndex + 1 < data.getSize() && data.get(minIndex).compareTo(data.get(minIndex + 1)) > 0) {
+                minIndex = rightChild(index); //j的引用指向右孩子
                 //data[j]是leftChildren和rightChildren中的最小值
             }
-            if (data.get(index).compareTo(data.get(j)) <= 0) {
+            if (data.get(index).compareTo(data.get(minIndex)) <= 0) {
                 break;
             }
-            data.swap(index, j); //交换的是索引对应的元素!
-            index = j; //交换完毕后index(要下沉元素的索引)指向原来的索引j, 继续进行判断
+            data.swap(index, minIndex); //交换的是索引对应的元素!
+            index = minIndex; //交换完毕后index(要下沉元素的索引)指向原来的索引j, 继续进行判断
         }
     }
 

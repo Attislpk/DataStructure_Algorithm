@@ -5,10 +5,11 @@ public class Trie {
 
     private class Node {
         private boolean isWord; //当前Node是否是word的结尾
-        private TreeMap<Character, Node> next; // 当前节点到下一个节点的映射，存储的个数不固定<a, Node1>, <b, Node2>......
+        private TreeMap<Character, Node> next; // 通过Character获取到达下一个Node的映射, 每一个节点Node都可以通过Map获取达到下一个Node的映射
 
         public Node(boolean isWord) {
             this.isWord = isWord;
+            //next对应的是一个Map，K-V的映射
             next = new TreeMap<>();
         }
 
@@ -37,7 +38,6 @@ public class Trie {
             if (cur.next.get(c) == null)
                 //next中还没有存储相应的char,node键值对
                 cur.next.put(c, new Node());
-
             cur = cur.next.get(c);
         }
         if (!cur.isWord) {

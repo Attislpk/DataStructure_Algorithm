@@ -19,6 +19,7 @@ public class Array<E> {
         for (int i = 0; i < arr.length; i++){
             data[i] = arr[i];
         }
+        size = arr.length;
     }
 
     //获取数组中的元素个数
