@@ -16,6 +16,7 @@ class Solution {
         int rightCount = process(nums, mid + 1, right);
         if (nums[mid] <= nums[mid+1]) return leftCount + rightCount;
 
+        //对最后的两个数组进行merge操作
         int remainCount = merge(nums, left, mid, right);
         return leftCount + rightCount + remainCount;
     }

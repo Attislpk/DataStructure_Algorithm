@@ -8,10 +8,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="玩转算法面试" />
         <module name="onjava8" />
+        <module name="algoreview" />
         <module name="实习算法笔试" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="14">
+      <module name="algoreview" target="14" />
       <module name="onjava8" target="14" />
       <module name="实习算法笔试" target="14" />
       <module name="玩转算法面试" target="14" />

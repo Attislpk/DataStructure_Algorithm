@@ -1,5 +1,58 @@
 package 排序算法;
+
+import java.util.Arrays;
+
 public class MergeSort {
+
+    //归并排序的递归和迭代实现
+    public <E extends Comparable<E>> void mergeSort(E[] arr) {
+        if (arr == null || arr.length < 2) return;
+        process(arr, 0, arr.length - 1);
+    }
+
+    private <E extends Comparable<E>>void process(E[] arr, int l, int r) {
+        //terminator
+        if (l >= r) return;
+
+        //process
+        int mid = l + (r - l) / 2;
+        process(arr, l, mid);
+        process(arr, mid + 1, r);
+
+        //drill down
+        if (arr[mid].compareTo(arr[mid + 1]) <= 0) return;
+        merge(arr, l , mid, r);
+    }
+
+    private <E extends Comparable<E>>void merge(E[]arr, int l, int mid, int r) {
+        //[l,r+1)
+        E[] temp = (E[]) new Object[r - l + 1];
+        int index = 0;
+        int p1 = l;
+        int p2 = mid + 1;
+        while (p1 <= mid && p2 <= r) {
+            //temp[index++] = arr[p1].compareTo(arr[p2]) <= 0 ? arr[p1++] : arr[p2++];
+            //处理其他逻辑，如逆序对等等
+            if (arr[p1].compareTo(arr[p2]) <= 0) {
+                //其他逻辑XXX
+                temp[index ++] = arr[p1++];
+            }else {
+                //其他逻辑XXX
+                temp[index ++] = arr[p2++];
+            }
+        }
+        while (p1 <= mid) temp[index++] = arr[p1++];
+        while (p2 <= r) temp[index++] = arr[p2++];
+        //将temp刷回原数组
+        for (int i = 0; i < temp.length; i++) {
+            //arr从l开始
+            arr[l+i] = temp[i];
+        }
+    }
+
+
+
+    /**
     public static void merge(int[] arr) {
         if (arr == null || arr.length < 2)return;
 
@@ -63,4 +116,5 @@ public class MergeSort {
             System.out.println(i);
         }
     }
+     */
 }

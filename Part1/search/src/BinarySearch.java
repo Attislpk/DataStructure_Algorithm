@@ -7,11 +7,10 @@ public class BinarySearch {
 
     public static <E extends Comparable<E>> int search(E[] data, E target) {
         int l = 0, r = data.length - 1;
-        while (l <= r) {
+        while (l <= r) {  //循环终止条件是: l > r,此时搜索区间[l,r]==>[r+1,r]，区间不存在，说明该target在区间中不存在，因此返回-1
             int mid = l + (r - l) / 2;
-            //首先判断找到的情况，找到之后就不用继续判断了~，否则要判断很多没找到的情
             if (target.compareTo(data[mid]) == 0) {
-                return mid;
+                return mid;  //如果存在，在该行代码处直接返回
             }
             if (target.compareTo(data[mid]) > 0) {
                 l = mid + 1;
@@ -19,7 +18,7 @@ public class BinarySearch {
                 r = mid - 1;
             }
         }
-        return -1;
+        return -1; //如果不存在则返回-1
     }
 
 
@@ -32,7 +31,6 @@ public class BinarySearch {
         if (l > r) {
             return -1;
         }
-
         int mid = l + (r - l) / 2;
         if (target.compareTo(data[mid]) == 0) {
             return mid;
@@ -44,29 +42,30 @@ public class BinarySearch {
     }
 
 
-    //寻找>target的最小值
+    //寻找>target的最小值, 非等值查找，确保一定有解！
     public static <E extends Comparable<E>> int upper(E[] arr, E target) {
         int l = 0;
-        int r = arr.length; //如果比r还大，则取到arr.length，代表实际上不存在
-        while (l < r) {
+        int r = arr.length; //确保arr中的每一个元素都有大于它的最小值，对于最后一个元素而言，大于它的最小值位于arr.length处
+        while (l < r) {  //由于r可以取到arr.length,因此搜索区间是[l,r),因此循环终止条件为 l==r
             int mid = l + (r - l) / 2;
             if (arr[mid].compareTo(target) <= 0) {
-                //mid比target小，取右区间
-                l = mid + 1; //mid 没用了
+                l = mid + 1; // <=不满足要求，需要舍弃
             } else {
-                //mid>target
-                r = mid;// mid还能用
+                //mid>target,大于满足要求，需要保留
+                r = mid;
             }
         }
-        return l; //r  l = r  夹逼准则
+        return l; //while终止条件为 l==r,因此返回l/r等价
     }
+
+
 
     //寻找<target的最大值
     public static <E extends Comparable<E>> int lower(E[] arr, E target) {
         int l = -1;
         int r = arr.length - 1;
         while (l < r) {
-            System.out.println(l + "" + r);
+            //当l==r时，会出现死循环，向上取整
             int mid = l + (r - l + 1) / 2;
             if (arr[mid].compareTo(target) >= 0) {
                 r = mid - 1;

@@ -1,4 +1,4 @@
-package 剑指;
+package 剑指.动态规划之跳台阶;
 
 public class 剑指Offer10斐波那契数列 {
 }

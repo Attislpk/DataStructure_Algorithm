@@ -11,7 +11,6 @@ public class _343_IntegerBreak {
 
 }
 
-
 /**
  * 使用递归+记忆化搜索自顶向下进行求解
  */
@@ -43,14 +42,12 @@ class Solution {
         return result[n];
     }
 
-
     /**
      * 使用动态规划自底向上
      * result[i]中存放的结果是: 将数字i分割（至少两份）后，得到的最大乘积
      */
     class Solution2 {
         int[] result;
-
         public int integerBreak(int n) {
             result = new int[n+1];
 

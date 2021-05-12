@@ -42,7 +42,7 @@ class bogu {
     private static int search(int[] arr) {
         int left = 0;
         int right = arr.length - 1;
-        while (left <= right) {
+        while (left <= right) { //因为right是arr.length-1,因此此处可以取=
             int mid = left + ((right - left) >> 1);
             if (arr[mid] < arr[mid-1] && arr[mid] < arr[mid+1]) {
                 return mid;

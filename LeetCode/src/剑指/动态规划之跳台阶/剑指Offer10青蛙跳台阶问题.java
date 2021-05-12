@@ -1,4 +1,4 @@
-package 剑指;
+package 剑指.动态规划之跳台阶;
 
 public class 剑指Offer10青蛙跳台阶问题 {
 }

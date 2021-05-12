@@ -2,8 +2,8 @@ package 剑指;
 
 import java.util.Stack;
 
-public class 用两个栈实现队列 {
-}
+//public class 用两个栈实现队列 {
+//}
 class CQueue {
     Stack<Integer> inStack = new Stack<>();
     Stack<Integer> outStack = new Stack<>();

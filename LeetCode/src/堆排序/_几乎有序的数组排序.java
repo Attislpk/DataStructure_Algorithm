@@ -13,19 +13,17 @@ public class _几乎有序的数组排序 {
 class SortArrayDistanceLessK {
     private int[] arr;
     public static void main(String[] args) {
-        PriorityQueue<Integer> maxHeap = new PriorityQueue<>((o1,o2)->{return o2.compareTo(o1);});
-
+        int[] arr = new int[]{3,4,5,1,2};
+        int k = 3;
+        move(arr,k);
     }
-
-
-
 
     public static void move(int[] arr, int k) {
         if (k == 0) return;
         //默认小根堆
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         int index = 0;
-        //将前k/len-1范围取小的元素加入minHeap中   先把前面k个数加入堆，已知排好序的第一个节点必然在前面k个数中
+        //将前k或len-1范围取小的元素(有可能arr.length<k)加入minHeap中   先把前面k个数加入堆，已知排好序的第一个节点必然在前面k个数中
         while (index < Math.min(arr.length, k)) {
             minHeap.add(arr[index++]);
         }
@@ -36,8 +34,7 @@ class SortArrayDistanceLessK {
             arr[i] = minHeap.poll(); //k个元素中的最小值
             minHeap.add(arr[index]); //继续从index位置将元素从数组中添加到堆中
         }
-
-        //当数组中元素已经全部在堆中，且此时堆还不为空，则将剩余元素弹出添加到数组中
+        //此时全部元素已经在最小堆中，直到弹到最小堆为空
         while (!minHeap.isEmpty()) {
             arr[i++] = minHeap.poll();
         }

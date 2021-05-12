@@ -22,7 +22,7 @@ class soluotion {
             return;
         }
 
-        //一共需要对str划分4次, 每一次划分的长度可以是1~3
+        //一共需要对str划分3次,4段, 每一次划分的长度可以是1~3
         for (int i = 1; i <= 3; i++) {
             //剪枝，当pos+i已经越界进行剪枝，由于i是递增的，没有必要继续下去了
             if (pos + i > s.length()) break;
